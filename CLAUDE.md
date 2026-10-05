@@ -19,7 +19,7 @@ The look is the Barrie Bramley design system, ported unchanged into `src/styles/
 The original handoff (README, prototype, design system) is in Barrie's Google Drive: `bhs alumni/design_handoff_bhs_alumni_site`.
 
 ## Content model
-Post frontmatter: `title`, `date` (YYYY-MM-DD), `category` (Memories, Happenings, Profiles, Podcasts, Foundation, Notices; exact spelling), `excerpt`, `author` (default Tan Lawensky), optional `hero` (e.g. `/images/uploads/x.jpg`), optional `podcastUrl` + `podcastHost`, `draft`, `sample`. A bad value fails the build; Netlify then keeps the previous deploy live.
+Post frontmatter: `title`, `date` (YYYY-MM-DD), `category` (Thoughts, Memories, Happenings, Profiles, Podcasts, Foundation, Notices; exact spelling), `excerpt`, `author` (default Tan Lawensky), optional `hero` (e.g. `/images/uploads/x.jpg`), optional `podcastUrl` + `podcastHost`, `draft`, `sample`. A bad value fails the build; Netlify then keeps the previous deploy live.
 - Images go in `public/images/uploads/`. Categories also exist as pages at `/blog/<lowercase-category>`; a post slug must never equal a category slug (both are served by `src/pages/blog/[slug].astro`).
 - Posts with `sample: true` are placeholders from the design handoff for Tan to replace or delete.
 - Podcast posts: category Podcasts with `podcastUrl`. The home page lists up to 4, newest first, each linking out in a new tab.

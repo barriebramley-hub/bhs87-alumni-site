@@ -1,6 +1,6 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 
-export const CATEGORIES = ['Memories', 'Happenings', 'Profiles', 'Podcasts', 'Foundation', 'Notices'] as const;
+export const CATEGORIES = ['Thoughts', 'Memories', 'Happenings', 'Profiles', 'Podcasts', 'Foundation', 'Notices'] as const;
 export type Category = (typeof CATEGORIES)[number];
 
 export const catSlug = (c: string) => c.toLowerCase();
