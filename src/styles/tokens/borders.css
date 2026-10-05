@@ -1,0 +1,19 @@
+:root {
+  /* nothing in this system has a radius. that is the point. */
+  --bb-radius: 0;
+
+  --bb-rule-heavy: 2px solid var(--bb-black); /* section + chrome divisions */
+  --bb-rule-hair: 1px solid var(--bb-black); /* list item divisions */
+  --bb-border-control: 2px solid var(--bb-black);
+
+  --bb-shadow: none; /* there are no shadows anywhere on the site */
+
+  --bb-focus-ring: 2px solid var(--bb-black);
+  --bb-focus-offset: 2px;
+
+  --bb-aspect-hero: 16 / 9;
+  --bb-aspect-feature: 16 / 10;
+  --bb-aspect-card: 3 / 2;
+  --bb-aspect-row: 4 / 3;
+  --bb-aspect-square: 1 / 1;
+}

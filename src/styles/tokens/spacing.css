@@ -1,0 +1,36 @@
+:root {
+  /* the site's real step values, not a synthetic 4px scale */
+  --bb-space-1: 4px;
+  --bb-space-2: 6px;
+  --bb-space-3: 8px;
+  --bb-space-4: 10px;
+  --bb-space-5: 12px;
+  --bb-space-6: 14px;
+  --bb-space-7: 16px;
+  --bb-space-8: 18px;
+  --bb-space-9: 20px;
+  --bb-space-10: 22px;
+  --bb-space-11: 24px;
+  --bb-space-12: 26px;
+  --bb-space-13: 28px;
+  --bb-space-14: 34px;
+  --bb-space-15: 40px;
+  --bb-space-16: 44px;
+  --bb-space-17: 52px;
+  --bb-space-18: 60px;
+  --bb-space-19: 80px;
+
+  /* layout */
+  --bb-page-max: 1120px;
+  --bb-article-max: 760px;
+  --bb-gutter: clamp(18px, 5cqw, 28px);
+  --bb-gap-cards: clamp(24px, 3cqw, 32px);
+  --bb-gap-row: clamp(16px, 3cqw, 28px);
+  --bb-gap-split: 40px;
+  --bb-section-gap: 52px;
+  --bb-footer-gap: 80px;
+
+  /* breakpoints (container queries, not viewport) */
+  --bb-bp-row: 620px;
+  --bb-bp-split: 760px;
+}

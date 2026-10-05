@@ -1,0 +1,10 @@
+---
+const { number, title } = Astro.props;
+---
+<section class="bb-split" style="border-top:var(--bb-rule-heavy);padding:34px 0">
+  <div>
+    {number && <div style="font-family:var(--bb-font-display);font-weight:700;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--bb-text-muted)">{number}</div>}
+    <h2 style="font-family:var(--bb-font-display);font-weight:900;font-size:clamp(28px,3.2cqw,40px);line-height:1;letter-spacing:-0.02em;margin:10px 0 0">{title}</h2>
+  </div>
+  <div><slot /></div>
+</section>

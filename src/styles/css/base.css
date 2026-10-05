@@ -1,0 +1,15 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bb-surface);
+  color: var(--bb-text);
+  font-family: var(--bb-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--bb-link); text-decoration: none; }
+a:hover { color: var(--bb-link-hover); }
+img { max-width: 100%; }
+
+:focus-visible { outline: var(--bb-focus-ring); outline-offset: var(--bb-focus-offset); }

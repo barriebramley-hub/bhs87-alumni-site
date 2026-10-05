@@ -1,0 +1,11 @@
+---
+import ImageBlock from './ImageBlock.astro';
+import Label from './Label.astro';
+const { href, image, title, excerpt, meta, category } = Astro.props;
+---
+<a class="bb-card" href={href}>
+  <ImageBlock src={image} alt={title} ratio="3 / 2" fallbackLabel={category} />
+  <Label>{meta}</Label>
+  <h3>{title}</h3>
+  <p>{excerpt}</p>
+</a>

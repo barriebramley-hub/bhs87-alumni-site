@@ -1,0 +1,23 @@
+:root {
+  /* base — the entire palette is three values */
+  --bb-black: #000000;
+  --bb-white: #ffffff;
+  --bb-grey: #666666;
+  --bb-grey-hairline: #e6e6e6; /* only use: the missing-image hatch */
+
+  /* semantic */
+  --bb-text: var(--bb-black);
+  --bb-text-muted: var(--bb-grey);
+  --bb-text-inverse: var(--bb-white);
+  --bb-surface: var(--bb-white);
+  --bb-surface-inverse: var(--bb-black);
+  --bb-image-bed: var(--bb-black);
+  --bb-link: var(--bb-black);
+  --bb-link-hover: var(--bb-grey);
+  --bb-border: var(--bb-black);
+  --bb-focus: var(--bb-black);
+  --bb-placeholder: var(--bb-grey);
+
+  /* the only pattern in the system: failed/absent image fill */
+  --bb-hatch: repeating-linear-gradient(135deg, var(--bb-white) 0 5px, var(--bb-grey-hairline) 5px 10px);
+}

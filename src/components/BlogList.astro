@@ -1,0 +1,81 @@
+---
+import PostRow from './PostRow.astro';
+import Chip from './Chip.astro';
+import EmptyState from './EmptyState.astro';
+import { CATEGORIES, catSlug, countFor, type Post } from '../lib/posts';
+interface Props { posts: Post[]; all: Post[]; active?: string }
+const { posts, all, active } = Astro.props;
+---
+<div class="bb-rule">
+  <div class="bb-filter">
+    <div class="bb-field">
+      <input class="bb-input" type="search" id="q" placeholder="Search the posts" aria-label="Search the posts" autocomplete="off" />
+      <button type="button" class="bb-clear" id="clear" aria-label="Clear search">×</button>
+    </div>
+    <div class="bb-field bb-field-select">
+      <select class="bb-select" id="cat" aria-label="Subject">
+        <option value="">All subjects</option>
+        {CATEGORIES.map((c) => <option value={catSlug(c)} selected={c === active}>{c}</option>)}
+      </select>
+    </div>
+  </div>
+</div>
+<div class="bb-chips" style="padding:22px 0;border-bottom:1px solid #000000">
+  {CATEGORIES.map((c) => <Chip href={c === active ? '/blog' : `/blog/${catSlug(c)}`} count={countFor(all, c)} active={c === active}>{c}</Chip>)}
+</div>
+<p class="bb-count" id="count" data-active={active ?? ''}></p>
+<div id="list">
+  {posts.map((p) => (
+    <div data-post data-text={`${p.title} ${p.excerpt}`.toLowerCase()}>
+      <PostRow href={p.href} image={p.hero} title={p.title} excerpt={p.excerpt} meta={p.meta} category={p.category} />
+    </div>
+  ))}
+</div>
+<EmptyState hidden body="Either it never happened, or nobody's written it up yet. Try a different word, or go and read something else." />
+<nav class="bb-pgr bb-hidden" id="pager" aria-label="Pagination"></nav>
+
+<script>
+  const PER = 12;
+  const $ = (id: string) => document.getElementById(id)!;
+  const q = $('q') as HTMLInputElement, clear = $('clear'), cat = $('cat') as HTMLSelectElement;
+  const count = $('count'), pager = $('pager');
+  const rows = [...document.querySelectorAll<HTMLElement>('[data-post]')];
+  const empty = document.querySelector<HTMLElement>('[data-empty]')!;
+  const active = count.dataset.active || '';
+  let page = 1;
+
+  function render() {
+    const term = q.value.trim().toLowerCase();
+    clear.classList.toggle('is-on', !!q.value);
+    const hits = rows.filter((r) => !term || (r.dataset.text ?? '').includes(term));
+    const pages = Math.max(1, Math.ceil(hits.length / PER));
+    page = Math.min(page, pages);
+    rows.forEach((r) => r.classList.add('bb-hidden'));
+    hits.slice((page - 1) * PER, page * PER).forEach((r) => r.classList.remove('bb-hidden'));
+    empty.classList.toggle('bb-hidden', hits.length > 0);
+    count.textContent =
+      `${hits.length} ${hits.length === 1 ? 'post' : 'posts'}` +
+      (active ? ` in ${active}` : '') +
+      (term ? ` matching “${q.value.trim()}”` : '');
+    pager.classList.toggle('bb-hidden', pages < 2);
+    if (pages > 1) {
+      const nums = Array.from({ length: pages }, (_, i) => `<a href="#" class="bb-pg${i + 1 === page ? ' is-now' : ''}" data-p="${i + 1}">${i + 1}</a>`).join('');
+      pager.innerHTML =
+        `<a href="#" class="bb-pg${page <= 1 ? ' is-off' : ''}" data-p="${page - 1}">← Prev</a>` +
+        `<div class="bb-pg-nums">${nums}</div>` +
+        `<a href="#" class="bb-pg${page >= pages ? ' is-off' : ''}" data-p="${page + 1}">Next →</a>`;
+    }
+  }
+  q.addEventListener('input', () => { page = 1; render(); });
+  clear.addEventListener('click', () => { q.value = ''; page = 1; render(); q.focus(); });
+  cat.addEventListener('change', () => { location.href = cat.value ? `/blog/${cat.value}` : '/blog'; });
+  pager.addEventListener('click', (e) => {
+    const a = (e.target as HTMLElement).closest<HTMLElement>('[data-p]');
+    if (!a) return;
+    e.preventDefault();
+    page = Number(a.dataset.p);
+    render();
+    window.scrollTo(0, 0);
+  });
+  render();
+</script>

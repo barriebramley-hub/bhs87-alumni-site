@@ -1,0 +1,8 @@
+---
+const { href, image, title, excerpt, date, category } = Astro.props;
+---
+<a class="bb-row-sm" href={href}>
+  <div class={`bb-thumb-sm${image ? '' : ' bb-fallback'}`}>{image ? <img src={image} alt={title} loading="lazy" /> : <span>{category}</span>}</div>
+  <div><h3>{title}</h3><p>{excerpt}</p></div>
+  <div class="bb-date">{date}</div>
+</a>

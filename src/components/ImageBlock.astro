@@ -1,0 +1,9 @@
+---
+interface Props { src?: string; alt?: string; ratio?: string; fallbackLabel?: string; style?: string }
+const { src, alt = '', ratio = '16 / 10', fallbackLabel, style = '' } = Astro.props;
+---
+{src ? (
+  <div class="bb-img" style={`aspect-ratio:${ratio};${style}`}><img src={src} alt={alt} loading="lazy" /></div>
+) : (
+  <div class="bb-img bb-fallback" style={`aspect-ratio:${ratio};${style}`}><span>{fallbackLabel || alt}</span></div>
+)}

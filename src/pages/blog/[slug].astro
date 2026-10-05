@@ -1,0 +1,62 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import BlogList from '../../components/BlogList.astro';
+import ImageBlock from '../../components/ImageBlock.astro';
+import Prose from '../../components/Prose.astro';
+import Chip from '../../components/Chip.astro';
+import PostNav from '../../components/PostNav.astro';
+import { getPosts, CATEGORIES, catSlug } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  const cats = CATEGORIES.map((c) => ({ params: { slug: catSlug(c) }, props: { category: c as string, index: -1 } }));
+  const articles = posts.map((p, i) => ({ params: { slug: p.slug }, props: { category: '', index: i } }));
+  return [...cats, ...articles];
+}
+
+const { category, index } = Astro.props;
+const posts = await getPosts();
+const post = index >= 0 ? posts[index] : undefined;
+const Content = post ? (await render(post.entry)).Content : undefined;
+const back = { href: '/blog', title: 'Back to all posts' };
+const older = post ? posts[index + 1] : undefined;
+const newer = post ? posts[index - 1] : undefined;
+const prev = older ? { href: older.href, title: older.title } : back;
+const next = newer ? { href: newer.href, title: newer.title } : back;
+---
+{post && Content ? (
+  <Base title={post.title} description={post.excerpt} current="blog">
+    <article style="max-width:760px;margin:0 auto;padding:0 clamp(18px,5cqw,28px)">
+      <div style="padding:44px 0 0">
+        <div class="bb-label">{post.date} &nbsp;—&nbsp; {post.category} &nbsp;—&nbsp; {post.read}</div>
+        <h1 style="font-family:Raleway,sans-serif;font-weight:900;font-size:clamp(30px,4.4cqw,50px);line-height:1.04;letter-spacing:-0.02em;margin:16px 0 0;text-wrap:pretty">{post.title}</h1>
+        <p style="font-family:Raleway,sans-serif;font-weight:600;font-size:20px;line-height:1.5;color:#666666;margin:18px 0 0;text-wrap:pretty">{post.excerpt}</p>
+        <div class="bb-label" style="margin-top:22px;color:#000000">By {post.author}</div>
+      </div>
+      <div style="margin:32px 0 40px">
+        <ImageBlock src={post.hero} alt={post.title} ratio="16 / 9" fallbackLabel={post.category} />
+      </div>
+      <Prose><Content /></Prose>
+      {post.podcastUrl && (
+        <p style="margin-top:32px"><a class="bb-cta" href={post.podcastUrl} target="_blank" rel="noopener">Listen on {post.podcastHost ?? 'the host’s site'} ↗</a></p>
+      )}
+      <div style="margin-top:40px;padding-top:22px;border-top:1px solid #000000;display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+        <span class="bb-label">Filed under</span>
+        <div class="bb-chips"><Chip href={`/blog/${catSlug(post.category)}`}>{post.category}</Chip></div>
+      </div>
+      <PostNav prev={prev} next={next} />
+    </article>
+  </Base>
+) : (
+  <Base title={category} current="blog">
+    <main class="bb-wrap">
+      <section style="padding:56px 0 34px">
+        <div class="bb-kicker" style="margin-bottom:18px">The blog</div>
+        <h1 class="bb-h1" style="font-size:clamp(36px,5.4cqw,64px);line-height:1;text-wrap:pretty">Everything, in order of appearance.</h1>
+        <p style="margin:18px 0 0;font-size:17px;line-height:1.7;color:#666666;max-width:52ch">Collected, chased up and occasionally written by Tan Lawensky. If you remember it differently, you're welcome to write your own version.</p>
+      </section>
+      <BlogList posts={posts.filter((p) => p.category === category)} all={posts} active={category} />
+    </main>
+  </Base>
+)}

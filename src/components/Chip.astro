@@ -1,0 +1,6 @@
+---
+const { href = '#', count, active = false } = Astro.props;
+---
+<a class="bb-chip" href={href} style={active ? 'background:var(--bb-surface-inverse);color:var(--bb-text-inverse)' : undefined} data-chip>
+  <slot />{count != null && <b style={active ? 'color:var(--bb-text-inverse)' : undefined}>{count}</b>}
+</a>

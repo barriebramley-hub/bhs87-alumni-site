@@ -1,0 +1,15 @@
+---
+import ImageBlock from './ImageBlock.astro';
+import Label from './Label.astro';
+const { href, image, title, excerpt, meta, category } = Astro.props;
+---
+<a class="bb-row" href={href}>
+  <div class="bb-row-thumb">
+    {image ? <img src={image} alt={title} loading="lazy" /> : <ImageBlock ratio="16 / 10" fallbackLabel={category} style="height:100%" />}
+  </div>
+  <div>
+    <Label>{meta}</Label>
+    <h2>{title}</h2>
+    <p>{excerpt}</p>
+  </div>
+</a>

@@ -1,0 +1,24 @@
+---
+import { getEntry, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import SplitSection from '../components/SplitSection.astro';
+import Cta from '../components/Cta.astro';
+
+const about = await getEntry('pages', 'about');
+const sections = about?.data.sections ?? [];
+---
+<Base title="About" current="about">
+  <main class="bb-wrap">
+    <section style="padding:56px 0 44px">
+      <div class="bb-kicker" style="margin-bottom:18px">About</div>
+      <h1 class="bb-h1" style="font-size:clamp(36px,5.4cqw,64px);line-height:1;max-width:18ch;text-wrap:pretty">A few hundred people who left school in the same year.</h1>
+      <p style="margin:18px 0 0;font-size:17px;line-height:1.7;color:#666666;max-width:52ch">Four headings below. They cover most of it.</p>
+    </section>
+    {sections.map((s) => (
+      <SplitSection number={s.number} title={s.title}>
+        <p style="margin:0;font-size:17px;line-height:1.75;max-width:62ch">{s.body}</p>
+        {s.title === 'The Foundation' && <div style="margin-top:20px"><Cta href="/blog/foundation">Read the Foundation posts</Cta></div>}
+      </SplitSection>
+    ))}
+  </main>
+</Base>

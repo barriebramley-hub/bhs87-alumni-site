@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+const reasons = ['A lost classmate', 'A story idea', 'A correction', 'The Foundation', 'A contributor login', 'Something else'];
+---
+<Base title="Contact" current="contact">
+  <main class="bb-wrap">
+    <section style="padding:56px 0 44px">
+      <div class="bb-kicker" style="margin-bottom:18px">Contact</div>
+      <h1 class="bb-h1" style="font-size:clamp(36px,5.4cqw,64px);line-height:1;max-width:16ch;text-wrap:pretty">Get in touch. We'll pass it on.</h1>
+      <p style="margin:18px 0 0;font-size:17px;line-height:1.7;color:#666666;max-width:52ch">Lost classmates, story ideas, corrections, Foundation questions. Messages go to Barrie Bramley, who reads them all and answers most.</p>
+    </section>
+    <div class="bb-rule" style="padding-top:34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:34px clamp(24px,5cqw,64px);align-items:start">
+      <form name="contact" method="POST" action="/contact/thanks" data-netlify="true" netlify-honeypot="bot-field" style="display:flex;flex-direction:column;gap:18px;max-width:560px">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="bb-hidden"><label>Don't fill this in: <input name="bot-field" /></label></p>
+        <label style="display:flex;flex-direction:column;gap:8px"><span class="bb-label" style="color:#000000">Your name</span><input class="bb-input" name="name" required placeholder="As it appeared on the register" /></label>
+        <label style="display:flex;flex-direction:column;gap:8px"><span class="bb-label" style="color:#000000">Email</span><input class="bb-input" type="email" name="email" required placeholder="you@example.com" /></label>
+        <label style="display:flex;flex-direction:column;gap:8px"><span class="bb-label" style="color:#000000">About</span>
+          <div class="bb-field bb-field-select"><select class="bb-select" name="reason">{reasons.map((r) => <option value={r}>{r}</option>)}</select></div>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:8px"><span class="bb-label" style="color:#000000">Message</span><textarea class="bb-input" name="message" required placeholder="Take your time. Nobody's marking this."></textarea></label>
+        <div><button type="submit" class="bb-cta" style="background:none;border-top:0;border-left:0;border-right:0;cursor:pointer;color:#000000;padding:0 0 4px">Send it in</button></div>
+      </form>
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <div style="padding-bottom:22px;border-bottom:1px solid #000000"><div class="bb-label">Looking for someone</div><p style="margin:8px 0 0;font-size:16px;line-height:1.65;max-width:40ch">We don't publish anyone's details. Send us a name and we'll ask them to get in touch with you.</p></div>
+        <div style="padding-bottom:22px;border-bottom:1px solid #000000"><div class="bb-label">Want to write</div><p style="margin:8px 0 0;font-size:16px;line-height:1.65;max-width:40ch">Contributors get their own login. Say what you'd like to write about and we'll set one up.</p></div>
+      </div>
+    </div>
+  </main>
+</Base>

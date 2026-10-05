@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props { title?: string; description?: string; current?: 'home' | 'blog' | 'about' | 'contact'; image?: string }
+const { title, description = "The home of the Bryanston High School Class of 1987: articles, podcasts, happenings and the Class of 1987 Foundation NPC.", current } = Astro.props;
+const fullTitle = title ? `${title} — BHS Class of '87` : "BHS Class of '87 — Bryanston High School Alumni";
+---
+<!doctype html>
+<html lang="en-ZA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL('/images/bhs-logo.png', Astro.site)} />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="bb-page">
+      <SiteHeader current={current} />
+      <slot />
+      <SiteFooter />
+    </div>
+  </body>
+</html>

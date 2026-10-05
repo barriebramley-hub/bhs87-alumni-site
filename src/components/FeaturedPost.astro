@@ -1,0 +1,18 @@
+---
+import ImageBlock from './ImageBlock.astro';
+import Label from './Label.astro';
+const { href, image, title, excerpt, date, category, cta = 'Read this one' } = Astro.props;
+---
+<a href={href} style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,3cqw,36px);align-items:start">
+  <ImageBlock src={image} alt={title} ratio="16 / 10" fallbackLabel={category} />
+  <div>
+    <div style="display:flex;gap:14px;align-items:center">
+      <Label>{date}</Label>
+      <span style="width:18px;height:1px;background:var(--bb-text-muted);display:block"></span>
+      <Label>{category}</Label>
+    </div>
+    <h1 style="font-family:var(--bb-font-display);font-weight:900;font-size:clamp(30px,3.4cqw,46px);line-height:1.06;letter-spacing:-0.015em;margin:16px 0 0;text-wrap:pretty">{title}</h1>
+    <p style="font-size:17px;line-height:1.7;color:var(--bb-text);margin:18px 0 0;max-width:46ch;text-wrap:pretty">{excerpt}</p>
+    <span class="bb-cta" style="margin-top:20px">{cta}</span>
+  </div>
+</a>

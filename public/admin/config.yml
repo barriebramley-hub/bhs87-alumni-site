@@ -1,0 +1,53 @@
+# Decap CMS config. Contributor logins run through DecapBridge.
+# TODO: replace the two DecapBridge values below with the ones from your DecapBridge dashboard
+# (Site settings -> Decap CMS config). Everything else is final.
+backend:
+  name: git-gateway
+  repo: barriebramley-hub/bhs87-alumni-site
+  branch: main
+  base_url: https://auth.decapbridge.com/sites/REPLACE_WITH_DECAPBRIDGE_SITE_ID
+  gateway_url: https://gateway.decapbridge.com
+
+publish_mode: editorial_workflow
+media_folder: public/images/uploads
+public_folder: /images/uploads
+site_url: https://bhsalumni.co.za
+
+collections:
+  - name: blog
+    label: Blog posts
+    label_singular: Post
+    folder: src/content/blog
+    create: true
+    extension: md
+    slug: "{{slug}}"
+    summary: "{{title}} — {{category}}"
+    sortable_fields: [date, title, category]
+    fields:
+      - { name: title, label: Title, widget: string, hint: "Title Case" }
+      - { name: date, label: Date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { name: category, label: Category, widget: select, options: [Memories, Happenings, Profiles, Podcasts, Foundation, Notices] }
+      - { name: excerpt, label: Excerpt, widget: text, hint: "1–2 sentences. Used on cards and as the standfirst." }
+      - { name: author, label: Author, widget: string, default: Tan Lawensky }
+      - { name: hero, label: Hero image, widget: image, required: false, hint: "If empty, a black block with the category name is shown." }
+      - { name: podcastUrl, label: Podcast URL, widget: string, required: false, hint: "Podcasts posts only. The home page Podcasts list links here." }
+      - { name: podcastHost, label: Podcast host / platform, widget: string, required: false, hint: "e.g. Apple Podcasts" }
+      - { name: draft, label: Draft, widget: boolean, default: false, required: false }
+      - { name: sample, label: Sample post (delete or replace), widget: boolean, default: false, required: false }
+      - { name: body, label: Body, widget: markdown }
+
+  - name: pages
+    label: Pages
+    files:
+      - name: about
+        label: About page
+        file: src/content/pages/about.md
+        fields:
+          - { name: title, label: Title, widget: hidden, default: About }
+          - name: sections
+            label: Sections
+            widget: list
+            fields:
+              - { name: number, label: Number, widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: body, label: Body, widget: text }

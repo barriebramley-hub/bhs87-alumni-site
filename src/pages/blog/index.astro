@@ -1,0 +1,16 @@
+---
+import Base from '../../layouts/Base.astro';
+import BlogList from '../../components/BlogList.astro';
+import { getPosts } from '../../lib/posts';
+const posts = await getPosts();
+---
+<Base title="The blog" current="blog">
+  <main class="bb-wrap">
+    <section style="padding:56px 0 34px">
+      <div class="bb-kicker" style="margin-bottom:18px">The blog</div>
+      <h1 class="bb-h1" style="font-size:clamp(36px,5.4cqw,64px);line-height:1;text-wrap:pretty">Everything, in order of appearance.</h1>
+      <p style="margin:18px 0 0;font-size:17px;line-height:1.7;color:#666666;max-width:52ch">Collected, chased up and occasionally written by Tan Lawensky. If you remember it differently, you're welcome to write your own version.</p>
+    </section>
+    <BlogList posts={posts} all={posts} />
+  </main>
+</Base>
