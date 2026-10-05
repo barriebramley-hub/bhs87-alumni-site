@@ -14,7 +14,7 @@ So here we are. A website, with a blog, written and collected by people who were
 
 ## What goes here
 
-Stories from classmates. Links to the podcasts a few of us have stared in. Notices about reunions and get-togethers. And, in time, everything to do with the Class of 1987 Foundation NPC.
+Stories from classmates. Links to the podcasts a few of us have starred in. Notices about reunions and get-togethers. And, in time, everything to do with the Class of 1987 Foundation NPC.
 
 > If you remember it differently, write your own version.
 
