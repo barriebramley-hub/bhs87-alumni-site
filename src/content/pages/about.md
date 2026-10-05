@@ -12,5 +12,5 @@ sections:
     body: "The Class of 1987 Foundation NPC is the class's non-profit company. Details of what it funds, who runs it and how to contribute will live here once the paperwork stops multiplying."
   - number: "04"
     title: The podcasts
-    body: "A few of us have created amazing conversations. They're linked from the home page and filed under Podcasts on the blog."
+    body: "A few of us have created amazing conversations. They're filed under Podcasts on the blog, and defs worth a listen."
 ---
