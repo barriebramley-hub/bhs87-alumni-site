@@ -1,6 +1,6 @@
 ---
 title: "Reunion 2027 — Forty Years, One Venue, Several Hips"
-date: 2026-09-21
+date: 2026-10-05
 category: Happenings
 excerpt: "Next year is forty years since matric. A committee has formed, which is how you know it’s serious."
 author: Barrie Bramley

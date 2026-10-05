@@ -1,6 +1,6 @@
 ---
 title: "Do Ride Joburg the '87 Way!"
-date: 2026-10-05
+date: 2026-09-05
 category: Happenings
 excerpt: "Looking for something awesome to do on 22 Nov 2026, then here's something to add to your social calendar. "
 author: Tan Lawensky
