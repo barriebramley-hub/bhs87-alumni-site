@@ -7,8 +7,3 @@
 
 # Contact form notifications go to barrie.bramley@gmail.com — set in the Netlify UI:
 # Project configuration -> Notifications -> Form submission notifications -> Email.
-
-[[headers]]
-  for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
