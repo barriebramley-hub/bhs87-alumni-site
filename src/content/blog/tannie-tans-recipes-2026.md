@@ -5,7 +5,6 @@ category: Thoughts
 excerpt: "Tannie Tan's recipes may not be to everyone's liking, but they are defs worth a try."
 author: Tan Lawensky
 hero: /images/uploads/tanie-tan-recipes-2026.jpg
-
 sample: true
 ---
 
