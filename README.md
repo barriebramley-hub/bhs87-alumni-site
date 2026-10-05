@@ -11,5 +11,5 @@ Astro (static) + Decap CMS, deployed by Netlify on every push to `main`. Live at
 Run locally: `npm install && npm run dev` (http://localhost:4321). Build: `npm run build`.
 
 ## One-time setup still needed
-1. DecapBridge: create the site, then paste its `base_url` into `public/admin/config.yml` (and any extra script into `public/admin/index.html`). Invite Barrie (admin) and Tan (contributor).
+1. DecapBridge: done (PKCE). Invite contributors from the DecapBridge dashboard.
 2. Netlify: add the `bhsalumni.co.za` domain; add a form-submission email notification to barrie.bramley@gmail.com.
