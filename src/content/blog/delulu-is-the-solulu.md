@@ -2,7 +2,7 @@
 title: "Recalibrate Because Maybe Being Delulu is the Solulu"
 date: 2026-02-16
 category: Thoughts
-excerpt: "A short request, and a reminder that the comments were never as bad as you remember. Mostly."
+excerpt: "The benefits of having a healthy sleep pattern can be one of the most healing practices as sleep problems can exacerbate grief."
 author: Tanya De Ponte
 hero: /images/uploads/healing.jpg
 sample: true

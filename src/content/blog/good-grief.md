@@ -1,8 +1,8 @@
 ---
 title: "Good Grief, or What it Means to Manage Loss"
 date: 2026-08-28
-category: Podcasts
-excerpt: "Episode one. Two classmates, one microphone each, and a map of the world that keeps getting bigger."
+category: Thoughts
+excerpt: "Grief, or mourning, involves coping with loss. While primarily we refer to loss due to death, we also experience other forms of losses."
 author: Shelley Erin Roe-Berning
 hero: /images/uploads/we-have-a-website.jpg
 sample: true
