@@ -3,7 +3,7 @@ title: "Tannie Tan’s Recipes"
 date: 2026-03-02
 category: Thoughts
 excerpt: "Tannie Tan's recipes may not be to everyone's liking, but they are defs worth a try."
-author: Tan Lawensky
+author: Tan Welensky
 hero: /images/uploads/tanie-tan-recipes-2026.jpg
 sample: true
 ---
