@@ -2,7 +2,6 @@
 import { getEntry, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import SplitSection from '../components/SplitSection.astro';
-import Cta from '../components/Cta.astro';
 
 const about = await getEntry('pages', 'about');
 const sections = about?.data.sections ?? [];
@@ -17,7 +16,6 @@ const sections = about?.data.sections ?? [];
     {sections.map((s) => (
       <SplitSection number={s.number} title={s.title}>
         <p style="margin:0;font-size:17px;line-height:1.75;max-width:62ch">{s.body}</p>
-        {s.title === 'The Foundation' && <div style="margin-top:20px"><Cta href="/blog/foundation">Read the Foundation posts</Cta></div>}
       </SplitSection>
     ))}
   </main>

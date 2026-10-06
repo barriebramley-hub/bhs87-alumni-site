@@ -36,6 +36,8 @@ Post frontmatter: `title`, `date` (YYYY-MM-DD), `category` (Thoughts, Memories, 
 - Domain `bhsalumni.co.za` is on Netlify. Contributor emails are invited from the DecapBridge dashboard, not from code.
 - Pull before editing locally: Decap and local pushes both write to `main`.
 
+- Sitemap: `@astrojs/sitemap` regenerates `/sitemap-index.xml` on every build (config in `astro.config.mjs`; `public/robots.txt` points to it and blocks `/admin/`). Submit it once in Google Search Console.
+
 ## Commands
 `npm install`, `npm run dev` (localhost:4321), `npm run build` (output in `dist/`, check it before pushing).
 
