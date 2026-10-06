@@ -1,6 +1,6 @@
 ---
 title: "Eighty-Seven Unsupervised on Spotify"
-date: 2026-10-02
+date: 2025-11-01
 category: Podcasts
 excerpt: "Listen to Eighty-Seven Unsupervised on Spotify."
 author: Pete van Nieuwkerk

@@ -1,6 +1,6 @@
 ---
 title: Eighty-Seven Unsupervised on Apple Podcasts
-date: 2026-10-03
+date: 2025-11-01
 category: Podcasts
 excerpt: Listen to Eighty-Seven Unsupervised on Apple Podcasts.
 author: Pete van Nieuwkerk

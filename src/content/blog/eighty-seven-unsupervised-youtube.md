@@ -1,6 +1,6 @@
 ---
 title: "Eighty-Seven Unsupervised on YouTube"
-date: 2026-10-01
+date: 2025-11-01
 category: Podcasts
 excerpt: "Listen to Eighty-Seven Unsupervised on YouTube."
 author: Pete van Nieuwkerk
