@@ -20,7 +20,7 @@ const { posts, all, active } = Astro.props;
     </div>
   </div>
 </div>
-<div class="bb-chips" style="padding:22px 0;border-bottom:1px solid #000000">
+<div class="bb-chips" style="padding:22px 0;border-bottom:var(--bb-rule-hair)">
   {CATEGORIES.map((c) => <Chip href={c === active ? '/blog' : `/blog/${catSlug(c)}`} count={countFor(all, c)} active={c === active}>{c}</Chip>)}
 </div>
 <p class="bb-count" id="count" data-active={active ?? ''}></p>

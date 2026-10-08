@@ -1,7 +1,8 @@
 :root {
   /* families */
-  --bb-font-display: Raleway, sans-serif;
-  --bb-font-body: "Open Sans", system-ui, sans-serif;
+  --bb-font-display: Sora, system-ui, sans-serif;   /* headings */
+  --bb-font-body: Figtree, system-ui, sans-serif;     /* body and UI */
+  --bb-font-ui: Figtree, system-ui, sans-serif;
 
   /* weights — display runs heavy, body runs normal */
   --bb-w-regular: 400;
@@ -26,7 +27,7 @@
   --bb-size-body: 16px;
   --bb-size-body-sm: 15px;
   --bb-size-meta: 14px;
-  --bb-size-prose: clamp(16px, 1.1cqw + 14px, 18px);
+  --bb-size-prose: 17px;
   --bb-size-standfirst: 20px;
 
   /* eyebrow / label sizes — always uppercase Raleway */
@@ -50,8 +51,8 @@
   --bb-lh-display-tight: 0.98;
   --bb-lh-display-soft: 1.06;
   --bb-lh-heading: 1.18;
-  --bb-lh-body: 1.65;
-  --bb-lh-prose: 1.75;
+  --bb-lh-body: 1.6;
+  --bb-lh-prose: 1.7;
   --bb-lh-quote: 1.4;
 
   /* measures */

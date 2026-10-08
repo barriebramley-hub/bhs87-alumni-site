@@ -1,22 +1,38 @@
 :root {
-  /* base — the entire palette is three values */
-  --bb-black: #000000;
+  /* "Sunset band" palette — see DESIGN.md. Text is always indigo on white or white on the dark band. */
+  --bb-indigo: #232463;
   --bb-white: #ffffff;
-  --bb-grey: #666666;
+  --bb-magenta: #b43287;
+  --bb-magenta-hover: #861f65;
+  --bb-cyan: #58b7dd;   /* decorative only, never text on white */
+  --bb-orange: #d9703a; /* decorative only, never text on white */
+
+  /* legacy names still referenced by utilities.css; they now resolve to the new palette */
+  --bb-black: var(--bb-indigo);
+  --bb-grey: #3d3f78;
   --bb-grey-hairline: #e6e6e6; /* only use: the missing-image hatch */
 
   /* semantic */
-  --bb-text: var(--bb-black);
-  --bb-text-muted: var(--bb-grey);
-  --bb-text-inverse: var(--bb-white);
-  --bb-surface: var(--bb-white);
-  --bb-surface-inverse: var(--bb-black);
-  --bb-image-bed: var(--bb-black);
-  --bb-link: var(--bb-black);
-  --bb-link-hover: var(--bb-grey);
-  --bb-border: var(--bb-black);
-  --bb-focus: var(--bb-black);
-  --bb-placeholder: var(--bb-grey);
+  --bb-text: #232463;        /* main text and headings */
+  --bb-text-muted: #3d3f78;  /* secondary text */
+  --bb-text-meta: #4b4d7a;   /* small / meta text */
+  --bb-text-inverse: #ffffff;
+  --bb-surface: #ffffff;
+  --bb-surface-alt: #f4f4fa; /* alternate section background */
+  --bb-surface-inverse: #232463;
+  --bb-chip: #eeeefa;
+  --bb-image-bed: #232463;   /* category block shown when a post has no hero image */
+  --bb-link: #b43287;
+  --bb-link-hover: #861f65;
+  --bb-border: #e3e3f0;
+  --bb-focus: #232463;
+  --bb-placeholder: #4b4d7a;
+
+  /* gradients */
+  --bb-grad-band: linear-gradient(100deg, #232463 0%, #513382 48%, #b43287 82%, #d9703a 100%);
+  --bb-grad-podcast: linear-gradient(100deg, #232463 0%, #513382 70%, #7a2f88 100%);
+  --bb-grad-bar: linear-gradient(90deg, #232463, #b43287, #d9703a);
+  --bb-grad-sun: repeating-linear-gradient(to bottom, #ffffff 0 2px, transparent 2px 6px);
 
   /* the only pattern in the system: failed/absent image fill */
   --bb-hatch: repeating-linear-gradient(135deg, var(--bb-white) 0 5px, var(--bb-grey-hairline) 5px 10px);

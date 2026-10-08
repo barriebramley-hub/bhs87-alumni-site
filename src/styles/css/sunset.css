@@ -1,0 +1,142 @@
+/* "Sunset band" look (DESIGN.md). Loaded after utilities.css; appearance only. CSS only, no JS. */
+
+/* ---------- type: Sora for headings, Figtree for body + UI ---------- */
+h1, h2, h3, h4, .bb-prose h2, .bb-prose h3, .bb-prose h4, .bb-prose blockquote { font-family: var(--bb-font-display); }
+h1.bb-h1, h2.bb-h1 { font-weight: 700; letter-spacing: -0.015em; line-height: 1.08; font-size: clamp(34px, 7cqw, 56px); }
+.bb-label, .bb-nav, .bb-cta, .bb-chip, .bb-count, .bb-pg, .bb-pg-gap, .bb-input, .bb-select, .bb-clear,
+.bb-row-sm .bb-date, div.bb-kicker, .bb-brand .bb-brand-sub { font-family: var(--bb-font-ui); font-weight: 600; }
+.bb-label { color: var(--bb-text-meta); }
+.bb-prose { font-size: var(--bb-size-prose); line-height: var(--bb-lh-prose); }
+.bb-prose h2 { font-size: clamp(24px, 3cqw, 30px); font-weight: 700; }
+.bb-prose h3 { font-size: clamp(20px, 2.6cqw, 24px); font-weight: 700; }
+.bb-prose blockquote { border-left: 4px solid var(--bb-link); font-weight: 600; }
+.bb-prose a { color: var(--bb-link); }
+.bb-prose a:hover { color: var(--bb-link-hover); }
+
+/* eyebrow (div) vs section heading (h2) */
+div.bb-kicker { color: var(--bb-text-meta); letter-spacing: 0.16em; }
+h2.bb-kicker { font-family: var(--bb-font-display); font-weight: 700; font-size: clamp(26px, 3.2cqw, 34px); line-height: 1.15; letter-spacing: -0.01em; text-transform: none; color: var(--bb-text); margin: 0 0 24px; }
+
+/* ---------- links and calls to action ---------- */
+.bb-cta { display: inline-flex; align-items: center; min-height: 44px; border-bottom: 0; padding: 0; color: var(--bb-link); letter-spacing: 0.14em;
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 7px; text-decoration-color: var(--bb-link); }
+.bb-cta:hover { color: var(--bb-link-hover); text-decoration-color: var(--bb-link-hover); }
+button.bb-cta { background: none; border: 0; cursor: pointer; font-size: 12px; }
+.bb-brand, .bb-chip, .bb-card, .bb-row, .bb-row-sm, .bb-feature, .bb-postnav a, .bb-foot-in nav a { color: var(--bb-text); }
+.bb-row:hover h2, .bb-card:hover h3, .bb-row-sm:hover h3, .bb-feature:hover .bb-feature-title, .bb-postnav a:hover .bb-postnav-title { color: var(--bb-link); }
+
+/* ---------- header band + sun stripe ---------- */
+.bb-head { position: relative; background: var(--bb-grad-band); color: #ffffff; border-bottom: 0; padding-bottom: 30px; }
+.bb-head::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 30px; background: var(--bb-grad-sun); opacity: 0.55; pointer-events: none; }
+.bb-head a, .bb-head a:hover { color: #ffffff; }
+.bb-head a:hover { text-decoration: underline; text-underline-offset: 6px; }
+.bb-head :focus-visible { outline-color: #ffffff; }
+.bb-head-in { justify-content: flex-start; gap: 8px 44px; padding-top: 14px; padding-bottom: 14px; }
+.bb-brand { gap: 12px; min-height: 44px; }
+.bb-brand span { font-family: var(--bb-font-display); font-weight: 700; font-size: 14px; letter-spacing: 0.12em; }
+.bb-brand .bb-brand-sub { font-family: var(--bb-font-ui); font-weight: 600; font-size: 10px; letter-spacing: 0.16em; color: rgba(255, 255, 255, 0.92); }
+.bb-nav { gap: 4px 22px; letter-spacing: 0.14em; }
+.bb-head .bb-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 2px; color: #ffffff; }
+.bb-head .bb-nav a.is-current { border-bottom: 0; padding-bottom: 0; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 8px; }
+
+/* home hero lives inside the band: copy left (indigo/purple side), logo right (orange side) */
+.bb-hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 24px clamp(24px, 5cqw, 64px); align-items: center; padding-top: 22px; padding-bottom: 38px; }
+.bb-hero .bb-kicker, .bb-hero div.bb-kicker { color: #ffffff; margin: 0 0 18px; }
+.bb-hero h1.bb-h1 { color: #ffffff; text-wrap: pretty; }
+.bb-hero-lead { margin: 22px 0 0; font-size: 17px; line-height: 1.6; max-width: 46ch; color: #ffffff; text-wrap: pretty; }
+.bb-hero-logo { justify-self: end; width: min(100%, 330px); height: auto; display: block; }
+@container (max-width: 760px) {
+  .bb-hero { grid-template-columns: minmax(0, 1fr); padding-bottom: 30px; }
+  .bb-hero-actions { margin-top: 22px; }
+  .bb-hero-logo { justify-self: start; width: 190px; }
+}
+/* on narrow screens the copy spans the full width, so keep the gradient's orange end off-screen (text stays on indigo/purple) */
+@container (max-width: 760px) { .bb-head { background-size: 175% 100%; } }
+
+/* ---------- sections ---------- */
+.bb-rule { border-top: var(--bb-rule-heavy); }
+.bb-page > main.bb-wrap, .bb-page > article { margin-bottom: var(--bb-footer-gap); }
+.bb-alt { background: var(--bb-surface-alt); padding: 52px 0 60px; }
+.bb-home-first { padding-top: 52px; }
+
+/* ---------- featured post ---------- */
+.bb-feature .bb-label { color: var(--bb-link); letter-spacing: 0.16em; }
+.bb-feature .bb-img { border-radius: var(--bb-radius-card); }
+.bb-feature-title { font-family: var(--bb-font-display); font-weight: 700; font-size: clamp(30px, 3.4cqw, 42px); line-height: 1.1; letter-spacing: -0.015em; margin: 14px 0 0; color: var(--bb-text); text-wrap: pretty; }
+.bb-feature-lead { font-size: 17px; line-height: 1.6; color: var(--bb-text); margin: 16px 0 0; max-width: 46ch; text-wrap: pretty; }
+.bb-feature .bb-cta { margin-top: 8px; }
+
+/* ---------- post cards ---------- */
+.bb-card { gap: 0; background: var(--bb-surface); border: 1px solid var(--bb-border); border-radius: var(--bb-radius-card); overflow: hidden; }
+.bb-card::before { content: ""; display: block; height: 5px; background: var(--bb-grad-bar); }
+.bb-card .bb-img { border-radius: 0; }
+.bb-card .bb-label { padding: 16px 20px 0; }
+.bb-card h3 { font-weight: 600; font-size: 22px; padding: 8px 20px 0; }
+.bb-card p { padding: 10px 20px 22px; color: var(--bb-text-muted); }
+
+/* ---------- lists and rows ---------- */
+.bb-row, .bb-row-sm { border-bottom: var(--bb-rule-hair); }
+.bb-row h2 { font-weight: 600; }
+.bb-row p, .bb-row-sm p { color: var(--bb-text-muted); }
+.bb-row-thumb, .bb-thumb-sm, .bb-img { border-radius: var(--bb-radius-card); }
+.bb-row-sm h3 { font-weight: 600; }
+.bb-filter { border-bottom: var(--bb-rule-hair); }
+.bb-input, .bb-select { font-size: 15px; min-height: 48px; letter-spacing: 0.04em; }
+.bb-select { letter-spacing: 0.08em; }
+.bb-field-select::after { border-right-width: 2px; border-bottom-width: 2px; }
+.bb-clear { width: 44px; height: 44px; right: 2px; border-radius: var(--bb-radius); }
+.bb-empty h2 { font-weight: 700; }
+.bb-empty p { color: var(--bb-text-muted); }
+
+/* ---------- subject chips: pills, 44px minimum ---------- */
+.bb-chip { min-height: 44px; align-items: center; border: 0; border-radius: var(--bb-radius-pill); background: var(--bb-chip); color: var(--bb-text); padding: 0 18px; font-size: 12px; letter-spacing: 0.1em; }
+.bb-chip b { color: var(--bb-text-meta); }
+.bb-chip:hover { background: var(--bb-surface-inverse); color: #ffffff; }
+.bb-chip:hover b { color: #ffffff; }
+.bb-alt .bb-chip { background: #ffffff; }
+.bb-alt .bb-chip:hover { background: var(--bb-surface-inverse); }
+
+/* ---------- pagination ---------- */
+.bb-pg { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border: var(--bb-rule-hair); border-radius: var(--bb-radius); padding: 0 14px; }
+
+/* ---------- buttons (hero + podcast strip): pills, 48px tall ---------- */
+.bb-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border: 2px solid #ffffff; border-radius: var(--bb-radius-pill);
+  font-family: var(--bb-font-ui); font-weight: 600; font-size: 15px; letter-spacing: 0.03em; text-decoration: none; text-align: center; }
+.bb-head a.bb-btn, .bb-head a.bb-btn:hover, .bb-podcast a.bb-btn, .bb-podcast a.bb-btn:hover { text-decoration: none; }
+.bb-head a.bb-btn--solid, .bb-head a.bb-btn--solid:hover, .bb-podcast a.bb-btn--solid, .bb-podcast a.bb-btn--solid:hover { color: var(--bb-text); background: #ffffff; }
+.bb-head a.bb-btn--solid:hover, .bb-podcast a.bb-btn--solid:hover { background: var(--bb-chip); border-color: var(--bb-chip); }
+.bb-head a.bb-btn--outline, .bb-head a.bb-btn--outline:hover { color: #ffffff; background: transparent; }
+.bb-head a.bb-btn--outline:hover { background: rgba(255, 255, 255, 0.16); }
+.bb-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+/* ---------- podcast strip ---------- */
+.bb-podcast { background: var(--bb-grad-podcast); color: #ffffff; margin-top: 52px; padding: 52px 0 56px; }
+.bb-podcast-in { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px clamp(24px, 5cqw, 64px); align-items: center; }
+.bb-podcast h2.bb-kicker { color: #ffffff; margin-bottom: 14px; }
+.bb-podcast-copy { margin: 0; font-size: 17px; line-height: 1.6; color: #ffffff; max-width: 40ch; }
+.bb-podcast-links { display: flex; flex-wrap: wrap; gap: 12px; }
+.bb-podcast :focus-visible { outline-color: #ffffff; }
+
+/* ---------- article, split sections, post nav ---------- */
+.bb-split { border-top: var(--bb-rule-heavy); }
+.bb-split-num { font-family: var(--bb-font-ui); font-weight: 600; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bb-text-meta); }
+.bb-split-title { font-family: var(--bb-font-display); font-weight: 700; font-size: clamp(28px, 3.2cqw, 36px); line-height: 1.08; letter-spacing: -0.015em; margin: 10px 0 0; color: var(--bb-text); }
+.bb-postnav { margin-top: 46px; border-top: var(--bb-rule-heavy); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.bb-postnav a { display: block; padding: 24px 0; min-height: 44px; }
+.bb-postnav-label { font-family: var(--bb-font-ui); font-weight: 600; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bb-text-meta); }
+.bb-postnav-title { font-family: var(--bb-font-display); font-weight: 600; font-size: 18px; line-height: 1.25; margin-top: 8px; }
+.bb-article-title { font-family: var(--bb-font-display); font-weight: 700; font-size: clamp(30px, 4.4cqw, 46px); line-height: 1.08; letter-spacing: -0.015em; margin: 16px 0 0; text-wrap: pretty; }
+.bb-article-lead { font-family: var(--bb-font-display); font-weight: 600; font-size: 20px; line-height: 1.5; color: var(--bb-text-muted); margin: 18px 0 0; text-wrap: pretty; }
+.bb-lead { margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: var(--bb-text-muted); max-width: 52ch; }
+
+/* ---------- footer ---------- */
+.bb-foot { margin-top: 0; border-top: var(--bb-rule-heavy); background: #ffffff; }
+.bb-foot-in p { color: var(--bb-text-muted); font-size: 15px; }
+.bb-foot-in p .bb-motto { font-family: var(--bb-font-display); font-weight: 700; color: var(--bb-text); }
+.bb-foot-in nav { gap: 4px 22px; }
+.bb-foot-in nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 2px; font-size: 12px; }
+.bb-foot-in nav a:hover { color: var(--bb-link); }
+.bb-foot-in p.bb-foot-note { flex-basis: 100%; margin: 0; font-size: 13px; line-height: 1.6; color: var(--bb-text-meta); max-width: none; }
+
+/* ---------- small screens: no sideways scrolling ---------- */
+html, body { overflow-x: clip; }
