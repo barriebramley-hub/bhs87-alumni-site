@@ -30,9 +30,9 @@ const next = newer ? { href: newer.href, title: newer.title } : back;
     <article style="max-width:760px;margin:0 auto;padding:0 clamp(18px,5cqw,28px)">
       <div style="padding:44px 0 0">
         <div class="bb-label">{post.date} &nbsp;—&nbsp; {post.category} &nbsp;—&nbsp; {post.read}</div>
-        <h1 style="font-family:Raleway,sans-serif;font-weight:900;font-size:clamp(30px,4.4cqw,50px);line-height:1.04;letter-spacing:-0.02em;margin:16px 0 0;text-wrap:pretty">{post.title}</h1>
-        <p style="font-family:Raleway,sans-serif;font-weight:600;font-size:20px;line-height:1.5;color:#666666;margin:18px 0 0;text-wrap:pretty">{post.excerpt}</p>
-        <div class="bb-label" style="margin-top:22px;color:#000000">By {post.author}</div>
+        <h1 class="bb-article-title">{post.title}</h1>
+        <p class="bb-article-lead">{post.excerpt}</p>
+        <div class="bb-label" style="margin-top:22px;color:var(--bb-text)">By {post.author}</div>
       </div>
       <div style="margin:32px 0 40px">
         <ImageBlock src={post.hero} alt={post.title} ratio="16 / 9" fallbackLabel={post.category} />
@@ -41,7 +41,7 @@ const next = newer ? { href: newer.href, title: newer.title } : back;
       {post.podcastUrl && (
         <p style="margin-top:32px"><a class="bb-cta" href={post.podcastUrl} target="_blank" rel="noopener">Listen on {post.podcastHost ?? 'the host’s site'} ↗</a></p>
       )}
-      <div style="margin-top:40px;padding-top:22px;border-top:1px solid #000000;display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+      <div style="margin-top:40px;padding-top:22px;border-top:1px solid var(--bb-border);display:flex;flex-wrap:wrap;gap:14px;align-items:center">
         <span class="bb-label">Filed under</span>
         <div class="bb-chips"><Chip href={`/blog/${catSlug(post.category)}`}>{post.category}</Chip></div>
       </div>
@@ -53,8 +53,8 @@ const next = newer ? { href: newer.href, title: newer.title } : back;
     <main class="bb-wrap">
       <section style="padding:56px 0 34px">
         <div class="bb-kicker" style="margin-bottom:18px">The blog</div>
-        <h1 class="bb-h1" style="font-size:clamp(36px,5.4cqw,64px);line-height:1;text-wrap:pretty">Everything, in order of appearance.</h1>
-        <p style="margin:18px 0 0;font-size:17px;line-height:1.7;color:#666666;max-width:52ch">Collected, chased up and occasionally written by Tan Lawensky. If you remember it differently, you're welcome to write your own version.</p>
+        <h1 class="bb-h1" style="text-wrap:pretty">Everything, in order of appearance.</h1>
+        <p style="margin:18px 0 0;font-size:17px;line-height:1.7;color:var(--bb-text-muted);max-width:52ch">Collected, chased up and occasionally written by Tan Lawensky. If you remember it differently, you're welcome to write your own version.</p>
       </section>
       <BlogList posts={posts.filter((p) => p.category === category)} all={posts} active={category} />
     </main>

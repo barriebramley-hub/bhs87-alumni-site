@@ -1,10 +1,7 @@
 ---
 const { prev, next } = Astro.props;
-const cell = 'padding:24px 0;display:block';
-const lab = 'font-family:var(--bb-font-display);font-weight:700;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--bb-text-muted)';
-const ttl = 'font-family:var(--bb-font-display);font-weight:800;font-size:18px;line-height:1.25;margin-top:8px';
 ---
-<div style="margin-top:46px;border-top:var(--bb-rule-heavy);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
-  <a href={prev.href} style={cell}><div style={lab}>← Previous</div><div style={ttl}>{prev.title}</div></a>
-  <a href={next.href} style={cell}><div style={lab}>Next →</div><div style={ttl}>{next.title}</div></a>
+<div class="bb-postnav">
+  <a href={prev.href}><div class="bb-postnav-label">← Previous</div><div class="bb-postnav-title">{prev.title}</div></a>
+  <a href={next.href}><div class="bb-postnav-label">Next →</div><div class="bb-postnav-title">{next.title}</div></a>
 </div>

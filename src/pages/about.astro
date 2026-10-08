@@ -10,8 +10,8 @@ const sections = about?.data.sections ?? [];
   <main class="bb-wrap">
     <section style="padding:56px 0 44px">
       <div class="bb-kicker" style="margin-bottom:18px">About</div>
-      <h1 class="bb-h1" style="font-size:clamp(36px,5.4cqw,64px);line-height:1;max-width:18ch;text-wrap:pretty">A few hundred people who left school in the same year.</h1>
-      <p style="margin:18px 0 0;font-size:17px;line-height:1.7;color:#666666;max-width:52ch">Four headings below. They cover most of it.</p>
+      <h1 class="bb-h1" style="max-width:18ch;text-wrap:pretty">A few hundred people who left school in the same year.</h1>
+      <p style="margin:18px 0 0;font-size:17px;line-height:1.7;color:var(--bb-text-muted);max-width:52ch">Four headings below. They cover most of it.</p>
     </section>
     {sections.map((s) => (
       <SplitSection number={s.number} title={s.title}>
