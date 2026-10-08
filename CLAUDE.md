@@ -18,6 +18,7 @@ A calm white page; the only loud things are the logo and one sunset-coloured ban
 - Rules: speed first (CSS only, no animation, no parallax, no glow/blur, no extra JavaScript for styling); tap targets at least 44px; visible focus outlines; no sideways scrolling at phone width. Logos are WebP (`logo-480.webp` hero, `logo-160.webp` header/footer) with width/height attributes and alt text.
 - Voice: wry, dry, British/South African English, no emoji, no exclamation marks. CTAs are instructions ("Read this one", "Go and read something").
 - School motto: Veritas Fidelitas Justitia (Truth, Faith, Justice).
+- Home hero logo: desktop (container wider than 760px) shows the big crest on the right of the band; phones show the small header crest like every other page and never download the big one (`<picture>` placeholder source in `src/pages/index.astro`).
 - Deliberately not built: the large "40" on the featured post (Barrie said leave it out).
 The original handoff (README, prototype, old design system) is in Barrie's Google Drive: `bhs alumni/design_handoff_bhs_alumni_site`. It is superseded by the Sunset band design where they differ.
 

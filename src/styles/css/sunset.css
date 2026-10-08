@@ -33,6 +33,8 @@ button.bb-cta { background: none; border: 0; cursor: pointer; font-size: 12px; }
 .bb-head :focus-visible { outline-color: #ffffff; }
 .bb-head-in { justify-content: flex-start; gap: 8px 44px; padding-top: 14px; padding-bottom: 14px; }
 .bb-brand { gap: 12px; min-height: 44px; }
+.bb-brand img { width: 56px; height: 56px; display: block; object-fit: contain; }
+.bb-brand img.bb-brand-logo--phone-only { display: none; }
 .bb-brand span { font-family: var(--bb-font-display); font-weight: 700; font-size: 14px; letter-spacing: 0.12em; }
 .bb-brand .bb-brand-sub { font-family: var(--bb-font-ui); font-weight: 600; font-size: 10px; letter-spacing: 0.16em; color: rgba(255, 255, 255, 0.92); }
 .bb-nav { gap: 4px 22px; letter-spacing: 0.14em; }
@@ -46,9 +48,10 @@ button.bb-cta { background: none; border: 0; cursor: pointer; font-size: 12px; }
 .bb-hero-lead { margin: 22px 0 0; font-size: 17px; line-height: 1.6; max-width: 46ch; color: #ffffff; text-wrap: pretty; }
 .bb-hero-logo { justify-self: end; width: min(100%, 330px); height: auto; display: block; }
 @container (max-width: 760px) {
-  .bb-hero { grid-template-columns: minmax(0, 1fr); padding-bottom: 30px; }
+  .bb-hero { grid-template-columns: minmax(0, 1fr); padding-top: 14px; padding-bottom: 36px; }
   .bb-hero-actions { margin-top: 22px; }
-  .bb-hero-logo { justify-self: start; width: 190px; }
+  .bb-hero picture { display: none; }
+  .bb-brand img.bb-brand-logo--phone-only { display: block; }
 }
 /* on narrow screens the copy spans the full width, so keep the gradient's orange end off-screen (text stays on indigo/purple) */
 @container (max-width: 760px) { .bb-head { background-size: 175% 100%; } }
