@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import FeaturedPost from '../components/FeaturedPost.astro';
 import PostCard from '../components/PostCard.astro';
-import NuggetRow from '../components/NuggetRow.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import Chip from '../components/Chip.astro';
 import Cta from '../components/Cta.astro';
@@ -11,20 +10,29 @@ import { getPosts, CATEGORIES, catSlug, countFor } from '../lib/posts';
 const posts = await getPosts();
 const [featured, ...rest] = posts;
 const recent = rest.slice(0, 3);
-const podcasts = posts.filter((p) => p.category === 'Podcasts' && p.podcastUrl).slice(0, 4);
+const podcastLinks = [
+  { label: 'Apple Podcasts', href: 'https://podcasts.apple.com/us/podcast/eighty-seven-unsupervised/id1850288174' },
+  { label: 'Spotify', href: 'https://open.spotify.com/show/7fOgJKYaP5bZRxqcxMVeho?si=192a9f0f050442f2' },
+  { label: 'YouTube', href: 'https://www.youtube.com/playlist?list=PLB42eO2SIGg8GTU-K7pIMKwud6iOyhveG' },
+];
 ---
-<Base current="home">
-  <main class="bb-wrap">
-    <section style="padding:56px 0 52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px clamp(24px,5cqw,64px);align-items:end">
-      <div>
-        <div class="bb-kicker" style="margin-bottom:18px">Est. 1987 · Still going</div>
-        <h1 class="bb-h1" style="font-size:clamp(40px,7cqw,84px);line-height:0.98;text-wrap:pretty">The Class of 1987. Older, if not wiser.</h1>
+<Base current="home" hero>
+  <div class="bb-hero bb-wrap" slot="hero">
+    <div>
+      <div class="bb-kicker">Est. 1987 · Still going</div>
+      <h1 class="bb-h1">The Class of 1987. Older, if not wiser.</h1>
+      <p class="bb-hero-lead">This is the home of the Bryanston High School Class of 1987. We're still building it out, but you'll find articles from fellow alumni, links to podcasts, news of future happenings and events, and details about the Class of 1987 Foundation NPC.</p>
+      <div class="bb-hero-actions">
+        <a class="bb-btn bb-btn--solid" href="/blog">Read the blog</a>
+        <a class="bb-btn bb-btn--outline" href="/blog/podcasts">Listen to the podcasts</a>
       </div>
-      <p style="margin:0;font-size:17px;line-height:1.7;max-width:46ch;text-wrap:pretty">This is the home of the Bryanston High School Class of 1987. We're still building it out, but you'll find articles from fellow alumni, links to podcasts, news of future happenings and events, and details about the Class of 1987 Foundation NPC.</p>
-    </section>
+    </div>
+    <img class="bb-hero-logo" src="/images/logo-480.webp" alt="Bryanston High School alumni crest" width="480" height="480" fetchpriority="high" decoding="async" />
+  </div>
 
+  <main>
     {featured && (
-      <div class="bb-rule" style="padding-top:52px">
+      <div class="bb-wrap bb-home-first">
         <FeaturedPost href={featured.href} image={featured.hero} title={featured.title} excerpt={featured.excerpt} date={featured.date} category={featured.category} />
         {recent.length > 0 && (
           <div class="bb-rule" style="margin-top:52px;padding-top:40px">
@@ -38,22 +46,24 @@ const podcasts = posts.filter((p) => p.category === 'Podcasts' && p.podcastUrl).
       </div>
     )}
 
-    {podcasts.length > 0 && (
-      <section class="bb-rule" style="margin-top:52px;padding-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px clamp(24px,5cqw,64px)">
+    <section class="bb-podcast">
+      <div class="bb-wrap bb-podcast-in">
         <div>
-          <SectionHeading>Podcasts</SectionHeading>
-          <p style="margin:0;font-size:16px;line-height:1.65;color:#666666;max-width:36ch">Classmates talking into microphones for longer than any teacher would have allowed. Episodes open on the host's site.</p>
+          <SectionHeading>Eighty-Seven Unsupervised</SectionHeading>
+          <p class="bb-podcast-copy">Classmates talking into microphones for longer than any teacher would have allowed.</p>
         </div>
-        <div class="bb-rule">
-          {podcasts.map((p) => <NuggetRow href={p.podcastUrl} image={p.hero} title={p.title} summary={p.excerpt} host={p.podcastHost ?? 'Podcast host'} />)}
+        <div class="bb-podcast-links">
+          {podcastLinks.map((l) => <a class="bb-btn bb-btn--solid" href={l.href} target="_blank" rel="noopener">{l.label} ↗</a>)}
         </div>
-      </section>
-    )}
+      </div>
+    </section>
 
-    <section class="bb-rule" style="margin-top:52px;padding-top:40px">
-      <SectionHeading>Browse by subject</SectionHeading>
-      <div class="bb-chips">
-        {CATEGORIES.map((c) => <Chip href={`/blog/${catSlug(c)}`} count={countFor(posts, c)}>{c}</Chip>)}
+    <section class="bb-alt">
+      <div class="bb-wrap">
+        <SectionHeading>Browse by subject</SectionHeading>
+        <div class="bb-chips">
+          {CATEGORIES.map((c) => <Chip href={`/blog/${catSlug(c)}`} count={countFor(posts, c)}>{c}</Chip>)}
+        </div>
       </div>
     </section>
   </main>

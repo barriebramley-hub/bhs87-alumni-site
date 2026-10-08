@@ -1,14 +1,15 @@
 :root {
-  /* nothing in this system has a radius. that is the point. */
-  --bb-radius: 0;
+  --bb-radius: 8px;       /* form controls */
+  --bb-radius-card: 10px; /* cards and images */
+  --bb-radius-pill: 999px;
 
-  --bb-rule-heavy: 2px solid var(--bb-black); /* section + chrome divisions */
-  --bb-rule-hair: 1px solid var(--bb-black); /* list item divisions */
-  --bb-border-control: 2px solid var(--bb-black);
+  --bb-rule-heavy: 2px solid var(--bb-border); /* section divisions */
+  --bb-rule-hair: 1px solid var(--bb-border);  /* list item divisions */
+  --bb-border-control: 1px solid #4b4d7a;      /* inputs need a visible edge (3:1+) */
 
   --bb-shadow: none; /* there are no shadows anywhere on the site */
 
-  --bb-focus-ring: 2px solid var(--bb-black);
+  --bb-focus-ring: 2px solid #232463;
   --bb-focus-offset: 2px;
 
   --bb-aspect-hero: 16 / 9;
