@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import FeaturedPost from '../components/FeaturedPost.astro';
 import PostCard from '../components/PostCard.astro';
-import NuggetRow from '../components/NuggetRow.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import Chip from '../components/Chip.astro';
 import Cta from '../components/Cta.astro';
@@ -11,7 +10,11 @@ import { getPosts, CATEGORIES, catSlug, countFor } from '../lib/posts';
 const posts = await getPosts();
 const [featured, ...rest] = posts;
 const recent = rest.slice(0, 3);
-const podcasts = posts.filter((p) => p.category === 'Podcasts' && p.podcastUrl).slice(0, 4);
+const podcastLinks = [
+  { label: 'Apple Podcasts', href: 'https://podcasts.apple.com/us/podcast/eighty-seven-unsupervised/id1850288174' },
+  { label: 'Spotify', href: 'https://open.spotify.com/show/7fOgJKYaP5bZRxqcxMVeho?si=192a9f0f050442f2' },
+  { label: 'YouTube', href: 'https://www.youtube.com/playlist?list=PLB42eO2SIGg8GTU-K7pIMKwud6iOyhveG' },
+];
 ---
 <Base current="home" hero>
   <div class="bb-hero bb-wrap" slot="hero">
@@ -19,6 +22,10 @@ const podcasts = posts.filter((p) => p.category === 'Podcasts' && p.podcastUrl).
       <div class="bb-kicker">Est. 1987 · Still going</div>
       <h1 class="bb-h1">The Class of 1987. Older, if not wiser.</h1>
       <p class="bb-hero-lead">This is the home of the Bryanston High School Class of 1987. We're still building it out, but you'll find articles from fellow alumni, links to podcasts, news of future happenings and events, and details about the Class of 1987 Foundation NPC.</p>
+      <div class="bb-hero-actions">
+        <a class="bb-btn bb-btn--solid" href="/blog">Read the blog</a>
+        <a class="bb-btn bb-btn--outline" href="/blog/podcasts">Listen to the podcasts</a>
+      </div>
     </div>
     <img class="bb-hero-logo" src="/images/logo-480.webp" alt="Bryanston High School alumni crest" width="480" height="480" fetchpriority="high" decoding="async" />
   </div>
@@ -39,21 +46,19 @@ const podcasts = posts.filter((p) => p.category === 'Podcasts' && p.podcastUrl).
       </div>
     )}
 
-    {podcasts.length > 0 && (
-      <section class="bb-podcast">
-        <div class="bb-wrap bb-podcast-in">
-          <div>
-            <SectionHeading>Podcasts</SectionHeading>
-            <p class="bb-podcast-copy">Classmates talking into microphones for longer than any teacher would have allowed. Episodes open on the host's site.</p>
-          </div>
-          <div class="bb-podcast-list">
-            {podcasts.map((p) => <NuggetRow href={p.podcastUrl} image={p.hero} title={p.title} summary={p.excerpt} host={p.podcastHost ?? 'Podcast host'} />)}
-          </div>
+    <section class="bb-podcast">
+      <div class="bb-wrap bb-podcast-in">
+        <div>
+          <SectionHeading>Eighty-Seven Unsupervised</SectionHeading>
+          <p class="bb-podcast-copy">Classmates talking into microphones for longer than any teacher would have allowed.</p>
         </div>
-      </section>
-    )}
+        <div class="bb-podcast-links">
+          {podcastLinks.map((l) => <a class="bb-btn bb-btn--solid" href={l.href} target="_blank" rel="noopener">{l.label} ↗</a>)}
+        </div>
+      </div>
+    </section>
 
-    <section class="bb-alt" style={podcasts.length === 0 ? 'margin-top:52px' : undefined}>
+    <section class="bb-alt">
       <div class="bb-wrap">
         <SectionHeading>Browse by subject</SectionHeading>
         <div class="bb-chips">
