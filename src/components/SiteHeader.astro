@@ -11,7 +11,7 @@ const items = [
 <header class="bb-head">
   <div class="bb-head-in">
     <a class="bb-brand" href="/">
-      {!hero && <img src="/images/logo-160.webp" alt="Bryanston High School alumni crest" width="56" height="56" style="width:56px;height:56px;display:block;object-fit:contain" />}
+      <img class:list={['bb-brand-logo', { 'bb-brand-logo--phone-only': hero }]} src="/images/logo-160.webp" alt="Bryanston High School alumni crest" width="56" height="56" />
       <span style="display:flex;flex-direction:column;gap:4px">
         <span>BHS Class of '87</span>
         <span class="bb-brand-sub">Bryanston High School Alumni</span>
