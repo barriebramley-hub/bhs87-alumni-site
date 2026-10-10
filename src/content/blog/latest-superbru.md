@@ -1,5 +1,5 @@
 ---
-title: "Latest Superbru Torunament"
+title: "Latest Superbru Tournament"
 date: 2026-10-10
 category: Happenings
 excerpt: "Never a dull moment, and all the ups and downs that come with competing against fellow learners of the Class of 87."
