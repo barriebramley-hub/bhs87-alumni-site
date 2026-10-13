@@ -11,14 +11,14 @@ sample: true
 Forty years ago we walked out of that building. On Saturday, 25 September 2027, we're walking back in (maybe not that exact building 🤪), voluntarily this time, and considerably better dressed.
 
 **THE MAIN EVENT**
-Saturday 25 September 2027 (bold for Annie 😂)
+Saturday 25 September 2027 (take note Annie 😂)
 Sundowners rolling into dinner, dancing, and a great deal of talking over one another.
 
 **ALSO IN THE WORKS**
 ⛳ Friday 24 September - Class of '87 Golf Day (care of Rich)
 🥂 Sunday 26 September - Brunch, for those still standing (care of Jackie)
 
-You have twelve months' notice. That is significantly more than we ever gave a homework assignment.
+As of this post's date, you have twelve months' notice. That is significantly more than we ever gave a homework assignment.
 
 Book your flights. Clear the weekend. Find those who aren't in this group and drag them in (and Clive Varkis, let's find Clive!).
 

@@ -10,12 +10,12 @@ sample: true
 
 Two of BHS 1987’s funnest humans will once again be erecting their pop-up Pavillion on Sunday, 22 November 2026 from 5:30 am. There's no better place to watch and thoroughly enjoy RIDE JOBURG. 
 
-The Peterkin / Letcher Ride Joburg pop-up Supporter’s Pavillion is open to all BHS 1987 Foundation members and everyone else on the planet (so feel free to bring friends). 
+The Peterkin / Letcher Ride Joburg pop-up Supporter’s Pavillion is open to all BHS 1987 Foundation members (feel free to bring family and friends). 
 
 [**Sloane Butchery & Deli**](https://www.sloanesbutchery.co.za/) are bringing the boerie rolls and bacon and egg rolls, if you're early enough. There's also Rich’s sketchy music, great peeps, awesome vibes, VIP access to Anthony Pools Bakuzi, and your own choice of drinks (because it is bring your own - so come with Uber or Bolt). The day kicks off from 05:30 am until around noon (so come with Uber or Bolt).
 
-**WHERE IT IS**
-Arrive at whatever time suites you (and remember this year they're all passing really early because of a new starting location - so don't arrive late), on the corner of [Grosvenor Road and Crawford Drive](https://maps.app.goo.gl/HSsnsXjt4m5aKSR18). Remember to approach from Winnie Mandela Drive side of the world, as Grosvenor Road is closed for the cyclists. You can also park at Pick 'n Pay Douglasdale and take a 5 minute walk (towards Bryandale school).
+**WHERE TO FIND IT**
+It's in the Douglasdale area, please see the Class of 87 Ulumni Whatsapp or Facebook groups for the exact details.
 
 **WHAT TO BRING**
 Whatever you drinking, sunscreen, your best personality and an Uber, or Bolt.
