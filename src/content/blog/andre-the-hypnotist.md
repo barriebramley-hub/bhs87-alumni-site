@@ -10,9 +10,9 @@ sample: true
 
 On 19 December 2026, a bunch of us are going to watch the latest iteration of Andre the Hilarious Hypnotist at Monte Casino. We'll be going to the 17:00 show and then out for dinner and drinks, for whomever choose to make it, after the show.
 
-If you'd like to join [tap this link](https://calidascope.typeform.com/to/KgYEp42y) to tell us who you are and how many tickets you'd like?
+If you'd like to join [tap this link](https://calidascope.typeform.com/to/KgYEp42y) to tell us who you are and how many tickets you'd like? 
 
-We'll let you know where to send your money, and final deets for the evening.
+Tickets are R180 per person and we'll let you know where to send your money, and final deets for the evening.
 
 It's sure to be a fun adventure, especially if a couple of us volunteer to go up on stage and **fully participate**.
 
