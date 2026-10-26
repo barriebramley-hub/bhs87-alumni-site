@@ -1,6 +1,6 @@
 ---
 title: "Latest Superbru Tournament"
-date: 2026-10-13
+date: 2026-10-26
 category: Happenings
 excerpt: "Never a dull moment, and all the ups and downs that come with competing against fellow learners of the Class of 87."
 author: Barrie Bramley
@@ -18,9 +18,9 @@ The latest tournament we're running is for the [United Rugby Championship](https
 
 **Round 3 Results**
 
-There are 18 rounds (ends in May 2027). At the end of Round 3, here's the lay of the land:
+There are 18 rounds (ends in May 2027). At the end of Round 4, here's the lay of the land:
 
-![Round 3 Results](/images/uploads/superbru-round-2.jpeg)
+![Round 4 Results](/images/uploads/superbru-round-2.jpeg)
 
 **How to Enter** (if you're happy to be a few rounds behind, you can still join)
 
