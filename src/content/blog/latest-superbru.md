@@ -16,11 +16,11 @@ There's always a sports tournament happening somewhere in the world, and the Cla
 **United Rugby Championship**
 The latest tournament we're running is for the [United Rugby Championship](https://www.unitedrugby.com). See below for 'how to enter'.
 
-**Round 4 Results**
+**Round 5 Results**
 
-There are 18 rounds (ends in May 2027). At the end of Round 4, here's the lay of the land:
+There are 18 rounds (ends in May 2027). Here's the current lay of the land:
 
-![Round 4 Results](/images/uploads/superbru-round-2.jpeg)
+![Latest SuperBru Results](/images/uploads/superbru-round-2.jpeg)
 
 **How to Enter** (if you're happy to be a few rounds behind, you can still join)
 
