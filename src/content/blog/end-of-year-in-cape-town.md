@@ -16,7 +16,7 @@ Afterwards, Jane and Carol came through from the Winelands, and Trish joined us 
 
 It was a lovely, sunny, beautiful Cape Town day, and it was so good to see everyone. Here’s to the next one.
 
-![What a day](/images/ct-social-2026-03.jpg)
+![What a day](/images/uploads/ct-social-2026-03.jpg)
 
 ![Decisions decisions](/images/uploads/ct-social-2026-02.jpg)
 
